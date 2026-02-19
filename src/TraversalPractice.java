@@ -26,7 +26,6 @@ public class TraversalPractice {
    * @param node The root of the tree to print
    */
   public static <T> void printNodesWithOneChild(Node<T> node) {
-
     if (node == null) { return; }
 
     if (node.left == null && node.right != null || node.left != null && node.right == null) {
@@ -34,6 +33,7 @@ public class TraversalPractice {
     }
 
     printNodesWithOneChild(node.left);
+
     printNodesWithOneChild(node.right);
   }
 
@@ -46,7 +46,8 @@ public class TraversalPractice {
    * @return the sum 
    */
   public static int treeSum(Node<Integer> node) {
-    return 0;
+    if (node == null) { return 0;}
+    return treeSum(node.left) + treeSum(node.right) + node.value ;
   }
 
   /**
